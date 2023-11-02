@@ -4,6 +4,8 @@ c=a+b
 print (c)
 senthil=c
 print (senthil)
-
+print (c)
+d=10
+print (c+d)
 
 
