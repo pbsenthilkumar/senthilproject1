@@ -9,3 +9,4 @@ d=10
 print (c+d)
 e=100
 print (c+d+e)
+print (c+d+e)
