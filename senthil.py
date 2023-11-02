@@ -12,3 +12,4 @@ print (c+d+e)
 print (c+d+e)
 f=200
 print (f)
+print (f+d)
