@@ -1,20 +1,50 @@
 import tkinter as tk
 
+# Function to perform the arithmetic operation
+def calculate():
+    try:
+        num1 = float(entry_num1.get())
+        num2 = float(entry_num2.get())
+        operator = operator_var.get()
+        if operator == "+":
+            result.set(num1 + num2)
+        elif operator == "-":
+            result.set(num1 - num2)
+        elif operator == "*":
+            result.set(num1 * num2)
+        elif operator == "/":
+            if num2 == 0:
+                result.set("Error")
+            else:
+                result.set(num1 / num2)
+    except ValueError:
+        result.set("Invalid input")
+
 # Create the main window
 root = tk.Tk()
-root.title("Simple Python GUI")
+root.title("Simple Calculator")
 
-# Function to display a message when the button is clicked
-def display_message():
-    label.config(text="Hello, World!")
+# Entry fields for input numbers
+entry_num1 = tk.Entry(root)
+entry_num1.pack()
 
-# Create a button
-button = tk.Button(root, text="Click Me!", command=display_message)
-button.pack()
+entry_num2 = tk.Entry(root)
+entry_num2.pack()
 
-# Create a label to display the message
-label = tk.Label(root, text="")
-label.pack()
+# Dropdown menu to select the operator
+operator_var = tk.StringVar()
+operator_var.set("+")  # Default operator is addition
+operator_menu = tk.OptionMenu(root, operator_var, "+", "-", "*", "/")
+operator_menu.pack()
+
+# Button to perform the calculation
+calculate_button = tk.Button(root, text="Calculate", command=calculate)
+calculate_button.pack()
+
+# Label to display the result
+result = tk.StringVar()
+result_label = tk.Label(root, textvariable=result)
+result_label.pack()
 
 # Start the main event loop
 root.mainloop()
