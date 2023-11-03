@@ -1,5 +1,6 @@
 import random
 print("WELCOME TO P B SENTHIL KUMAR GAME WORLD")
+print("Programm for PMC TECH HOSUR")
 print("'w' (up), 'a' (left), 's' (down), or 'd' (right)")
 # Game grid dimensions
 GRID_SIZE = 5
